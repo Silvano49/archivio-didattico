@@ -1,0 +1,3 @@
+v 3
+d Stata commands - Silvano Andorno's teaching archive
+p friedman_c Friedman test for repeated measures, Kendall's W, and optional exact p-value

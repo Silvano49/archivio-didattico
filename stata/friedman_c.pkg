@@ -1,0 +1,6 @@
+v 3
+d friedman_c: Friedman test for repeated measures, Kendall's W, and optional exact permutation p-value
+d Author: Silvano Andorno and ChatGPT
+d Distribution package for Stata
+f friedman_c.ado
+f friedman_c.sthlp
