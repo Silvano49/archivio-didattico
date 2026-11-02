@@ -1,4 +1,5 @@
-
+---
+---
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -40,19 +41,24 @@
         e l'epidemiologia.
     </p>
 
-    <h2>Dispense e manuali</h2>
+<h2>Dispense e manuali</h2>
 
 <p>Materiali didattici di statistica ed epidemiologia.</p>
 
 <ul>
-    <li>
-        <a href="dispense/Dispensa_Newcombe11_validazione.pdf"
-           target="_blank">
-            Newcombe11 - Validazione dei metodi
-            per gli intervalli di confidenza
-        </a>
-        (PDF)
-    </li>
+{% assign documenti = site.static_files | sort: "name" %}
+{% for file in documenti %}
+  {% if file.path contains '/dispense/' %}
+    {% assign estensione = file.extname | downcase %}
+    {% if estensione == '.pdf' %}
+      <li>
+        <a href="{{ file.path | relative_url }}" target="_blank">
+          {{ file.basename | replace: '_', ' ' }}
+        </a> (PDF)
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
 </ul>
 
     <h2>Dataset ed esercitazioni</h2>
